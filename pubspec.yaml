@@ -1,0 +1,27 @@
+name: future_gate
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0 # تحديث إلى الإصدار الأحدث
+  async: ^2.13.0  # تحديث الحزمة إلى الإصدار الأحدث
+  fake_async: ^1.3.3  # تحديث الحزمة إلى الإصدار الأحدث
+  leak_tracker: ^10.0.9  # تحديث الحزمة إلى الإصدار الأحدث
+  vm_service: ^15.0.0  # تحديث الحزمة إلى الإصدار الأحدث
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
