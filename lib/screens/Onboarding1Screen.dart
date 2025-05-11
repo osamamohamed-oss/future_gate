@@ -1,137 +1,76 @@
 import 'package:flutter/material.dart';
 
-class Onboarding1Screen extends StatelessWidget {
+class Onboarding1Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          // Background Color
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Colors.white,
-          ),
-          // Frame and Auto layout for content
-          Positioned(
-            left: 65,
-            top: 554,
-            child: Container(
-              width: 230,
-              height: 40,
-              alignment: Alignment.center,
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
-                'Enter your seat number',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Volkhov',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  color: Color(0xFF003B99),
-                ),
-              ),
-            ),
-          ),
-          // Next Button
-          Positioned(
-            left: 80,
-            top: 639,
-            child: Container(
-              width: 200,
-              height: 44,
-              decoration: BoxDecoration(
-                color: Color(0xFFEBC069),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              alignment: Alignment.center,
-              child: Text(
-                'Next',
-                style: TextStyle(
-                  fontFamily: 'Volkhov',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-          // Skip Text
-          Positioned(
-            left: 308,
-            top: 80,
-            child: Text(
-              'Skip',
-              style: TextStyle(
-                fontFamily: 'Volkhov',
-                fontWeight: FontWeight.normal,
-                fontSize: 15,
-                color: Color(0xFFEBC069),
-              ),
-            ),
-          ),
-          // Image
-          Positioned(
-            left: 28,
-            top: 144,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                'assets/images/image.png', // Adjust the path as needed
-                width: 302,
-                height: 389,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          // Navigation Bar
-          Positioned(
-            left: 0,
-            top: 7,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Directionality(
+      textDirection: TextDirection.rtl, // دعم اللغة العربية
+      child: Scaffold(
+        appBar: AppBar(title: Text('Welcome to Onboarding 1')), // العنوان
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Time
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Text(
-                    '12:00 PM', // This can be dynamic if needed
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 15,
-                      color: Color(0xFF535353),
-                    ),
+                // صورة أو لوجو
+                Center(
+                  child: Image.asset(
+                    'assets/images/logo.png', // تأكد من مسار الصورة
+                    width: 200,
+                    height: 150,
                   ),
                 ),
-                // Battery
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Icon(
-                    Icons.battery_charging_full,
-                    color: Color(0xFF535353),
-                    size: 20,
+                SizedBox(height: 20),
+
+                // عنوان الصفحة
+                Text(
+                  'مرحبًا بك في أول صفحة Onboarding',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF003B99),
                   ),
                 ),
-                // Wifi
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Icon(Icons.wifi, color: Color(0xFF535353), size: 20),
+                SizedBox(height: 10),
+
+                // شرح أو تفاصيل الصفحة
+                Text(
+                  'هنا يمكنك تقديم بعض التفاصيل عن التطبيق أو الوظائف الأساسية التي يمكن للمستخدم استخدامها.',
+                  style: TextStyle(fontSize: 16, color: Color(0xFF424242)),
                 ),
-                // Signal
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  child: Icon(
-                    Icons.signal_cellular_4_bar,
-                    color: Color(0xFF535353),
-                    size: 20,
+                SizedBox(height: 20),
+
+                // زر للانتقال إلى الصفحة التالية
+                Center(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // ضع هنا الكود للانتقال إلى الصفحة التالية
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Onboarding2Page(),
+                        ),
+                      );
+                    },
+                    child: Text('انتقل إلى الصفحة التالية'),
                   ),
                 ),
               ],
             ),
           ),
-        ],
+        ),
       ),
+    );
+  }
+}
+
+class Onboarding2Page extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Onboarding 2')),
+      body: Center(child: Text('هذه صفحة Onboarding 2')),
     );
   }
 }

@@ -149,13 +149,17 @@ class ResetPasswordPage extends StatelessWidget {
               onPressed: () {
                 // إضافة منطق إعادة تعيين كلمة المرور هنا
               },
-              style: ElevatedButton.styleFrom(
-                primary: Color(0xFFEBC069),
-                onPrimary: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFEBC069)),
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
-                padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+                padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+                ),
               ),
               child: Text('Reset Password', style: TextStyle(fontSize: 16)),
             ),

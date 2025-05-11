@@ -1,97 +1,135 @@
-/* Nomination Paper Container */
-.nomination-container {
-  position: absolute;
-  width: 342px;
-  height: 576px;
-  left: 9px;
-  top: 119px;
-  box-sizing: border-box;
-  background: #FFFFFF;
-  border: 1px solid #EBC069;
-  border-radius: 12px;
-}
+import 'package:flutter/material.dart';
 
-/* Image (Logo) */
-.nomination-container .image-logo {
-  position: absolute;
-  width: 76.57px;
-  height: 69px;
-  left: 141px;
-  top: 124px;
-  background: url(image-removebg-preview.png) no-repeat center center;
-  background-size: contain;
-}
+class NominationPaperScreen extends StatelessWidget {
+  const NominationPaperScreen({super.key});
 
-/* Rectangle for Title */
-.nomination-container .rectangle-title {
-  position: absolute;
-  width: 205px;
-  height: 44px;
-  left: 78px;
-  top: 198px;
-  background: #F8EDD8;
-  border-radius: 10px;
-}
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          // Nomination Container
+          Positioned(
+            left: 9,
+            top: 119,
+            child: Container(
+              width: 342,
+              height: 576,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Color(0xFFEBC069)),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Stack(
+                children: [
+                  // Logo Image
+                  Positioned(
+                    left: 132, // Adjusted to center inside container
+                    top: 5,
+                    child: Image.asset(
+                      'assets/images/image-removebg-preview.png',
+                      width: 76.57,
+                      height: 69,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  
+                  // Title Rectangle
+                  Positioned(
+                    left: 78,
+                    top: 79,
+                    child: Container(
+                      width: 205,
+                      height: 44,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF8EDD8),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'نتيجة ترشيح الكلية', // Example text
+                        style: TextStyle(
+                          fontFamily: 'Volkhov',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12,
+                          color: Color(0xFF003B99),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
 
-/* University Placement Result */
-.nomination-container .placement-result {
-  position: absolute;
-  width: 196px;
-  height: 15px;
-  left: 83px;
-  top: 212px;
-  font-family: 'Volkhov', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  color: #003B99;
-}
+                  // University Info Text
+                  const Positioned(
+                    left: 33,
+                    top: 133,
+                    child: SizedBox(
+                      width: 295,
+                      height: 45,
+                      child: Text(
+                        'جامعة القاهرة - كلية الحاسبات والمعلومات',
+                        style: TextStyle(
+                          fontFamily: 'Volkhov',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12,
+                          color: Color(0xFF9E9E9E),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
 
-/* Text below the title (e.g., University, Faculty) */
-.nomination-container .university-info {
-  position: absolute;
-  width: 295px;
-  height: 45px;
-  left: 33px;
-  top: 256px;
-  font-family: 'Volkhov', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  color: #9E9E9E;
-}
+                  // Personal Info Block
+                  const Positioned(
+                    left: 21,
+                    top: 191,
+                    child: SizedBox(
+                      width: 322,
+                      height: 210,
+                      child: SingleChildScrollView(
+                        child: Text(
+                          'الاسم: أسامة محمد\nالرقم القومي: 1234567890\nالشعبة: علمي رياضة\n...',
+                          style: TextStyle(
+                            fontFamily: 'Volkhov',
+                            fontWeight: FontWeight.w700,
+                            fontSize: 13,
+                            height: 1.9,
+                            color: Color(0xFF9E9E9E),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
 
-/* Final Submission Button */
-.nomination-container .submit-button {
-  position: absolute;
-  width: 295px;
-  height: 45px;
-  left: 19px;
-  top: 537px;
-  font-family: 'Volkhov', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  color: #FF5100;
-  background-color: #F8EDD8;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* Personal Information Block */
-.nomination-container .personal-info {
-  position: absolute;
-  width: 322px;
-  height: 210px;
-  left: 21px;
-  top: 314px;
-  font-family: 'Volkhov', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 25px;
-  color: #9E9E9E;
-  overflow-y: auto; /* Allow scrolling if content overflows */
+                  // Submit Button
+                  Positioned(
+                    left: 19,
+                    bottom: 10,
+                    child: Container(
+                      width: 295,
+                      height: 45,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF8EDD8),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'تأكيد الترشيح النهائي',
+                        style: TextStyle(
+                          fontFamily: 'Volkhov',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12,
+                          color: Color(0xFFFF5100),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

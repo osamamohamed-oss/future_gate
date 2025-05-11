@@ -1,448 +1,294 @@
-/* signup */
-position: relative;
-width: 360px;
-height: 800px;
-background: #FFFFFF;
+import 'package:flutter/material.dart';
 
-/* logo */
-position: absolute;
-width: 195px;
-height: 143px;
-left: 83px;
-top: 77px;
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
-/* image-removebg-preview 1 */
-position: absolute;
-width: 124.29px;
-height: 112px;
-left: 118px;
-top: 77px;
-background: url(image-removebg-preview.png);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: [
+          // اللوغو (الصورة + اسم FutureGate)
+          Positioned(
+            top: 77,
+            left: 83,
+            child: SizedBox(
+              width: 195,
+              height: 143,
+              child: Image.asset(
+                'assets/images/image-removebg-preview.png',
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 185,
+            left: 83,
+            child: Text(
+              'FutureGate',
+              style: TextStyle(
+                fontFamily: 'Volkhov',
+                fontSize: 32,
+                fontWeight: FontWeight.w700,
+                color: Color(0xFF003B99),
+              ),
+            ),
+          ),
 
-/* FutureGate */
-position: absolute;
-width: 195px;
-height: 35px;
-left: 83px;
-top: 185px;
-font-family: 'Volkhov';
-font-style: normal;
-font-weight: 700;
-font-size: 32px;
-line-height: 47px;
-display: flex;
-align-items: center;
-text-align: center;
-color: #003B99;
+          // Full Name
+          Positioned(
+            top: 236,
+            left: 30,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Full Name',
+                  style: TextStyle(
+                    fontFamily: 'Volkhov',
+                    fontSize: 15,
+                    color: Color(0xFF535353),
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Container(
+                  width: 300,
+                  height: 50,
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.8),
+                    border: Border.all(color: Color(0xFF757575)),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.person, size: 20, color: Colors.grey),
+                      const SizedBox(width: 10),
+                      Text(
+                        'Mohamed Ahmed',
+                        style: TextStyle(
+                          fontFamily: 'Volkhov',
+                          fontSize: 14,
+                          color: Colors.grey.withOpacity(0.6),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
 
-/* Sign Up */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 10px;
-gap: 10px;
-position: absolute;
-width: 300px;
-height: 50px;
-left: 30px;
-top: 571px;
-background: linear-gradient(90deg, #F8EDD8 0%, #E3C280 59%, #EBC069 100%);
-border-radius: 10px;
+          // Seat Number
+          Positioned(
+            top: 317,
+            left: 30,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Seat Number',
+                  style: TextStyle(
+                    fontFamily: 'Volkhov',
+                    fontSize: 15,
+                    color: Color(0xFF535353),
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Container(
+                  width: 300,
+                  height: 50,
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.8),
+                    border: Border.all(color: Color(0xFF757575)),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.numbers, size: 20, color: Colors.grey),
+                      const SizedBox(width: 10),
+                      Text(
+                        '************',
+                        style: TextStyle(
+                          fontFamily: 'Volkhov',
+                          fontSize: 14,
+                          color: Colors.grey.withOpacity(0.6),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
 
-/* Sign Up text */
-width: 68px;
-height: 23px;
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 23px;
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: -0.333333px;
-color: #FFFFFF;
+          // Email
+          Positioned(
+            top: 398,
+            left: 30,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Email',
+                  style: TextStyle(
+                    fontFamily: 'Volkhov',
+                    fontSize: 15,
+                    color: Color(0xFF535353),
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Container(
+                  width: 300,
+                  height: 50,
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.8),
+                    border: Border.all(color: Color(0xFF757575)),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.mail_outline, size: 20, color: Colors.grey),
+                      const SizedBox(width: 10),
+                      Text(
+                        'example@email.com',
+                        style: TextStyle(
+                          fontFamily: 'Volkhov',
+                          fontSize: 14,
+                          color: Colors.grey.withOpacity(0.6),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
 
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
+          // Password
+          Positioned(
+            top: 479,
+            left: 30,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Password',
+                  style: TextStyle(
+                    fontFamily: 'Volkhov',
+                    fontSize: 15,
+                    color: Color(0xFF535353),
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Container(
+                  width: 300,
+                  height: 50,
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.8),
+                    border: Border.all(color: Color(0xFF757575)),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.lock_outline, size: 20, color: Colors.grey),
+                      const SizedBox(width: 10),
+                      Text(
+                        '************',
+                        style: TextStyle(
+                          fontFamily: 'Volkhov',
+                          fontSize: 14,
+                          color: Colors.grey.withOpacity(0.6),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
 
-/* Group 1171274969 */
-position: absolute;
-width: 173px;
-height: 18px;
-left: 85px;
-top: 649px;
+          // زر Sign Up
+          Positioned(
+            top: 571,
+            left: 30,
+            child: Container(
+              width: 300,
+              height: 50,
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFFF8EDD8), Color(0xFFE3C280), Color(0xFFEBC069)],
+                ),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const Center(
+                child: Text(
+                  'Sign Up',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                    letterSpacing: -0.33,
+                  ),
+                ),
+              ),
+            ),
+          ),
 
-/* Do have an account? Login */
-position: absolute;
-width: 173px;
-height: 18px;
-left: 85px;
-top: 649px;
-font-family: 'Volkhov';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 18px;
-text-align: center;
-letter-spacing: -0.333333px;
-color: #424242;
+          // Do have an account? Login
+          Positioned(
+            top: 649,
+            left: 85,
+            child: Text(
+              'Do have an account? Login',
+              style: TextStyle(
+                fontFamily: 'Volkhov',
+                fontSize: 14,
+                color: Color(0xFF424242),
+                letterSpacing: -0.33,
+              ),
+            ),
+          ),
 
-/* email */
-position: absolute;
-width: 300px;
-height: 68px;
-left: 30px;
-top: 398px;
-
-/* Rectangle 41921 */
-box-sizing: border-box;
-position: absolute;
-width: 300px;
-height: 50px;
-left: 30px;
-top: 416px;
-background: #FFFFFF;
-opacity: 0.8;
-border: 1px solid #757575;
-border-radius: 8px;
-
-/* example@email.com */
-position: absolute;
-width: 142px;
-height: 18px;
-left: 70px;
-top: 433px;
-font-family: 'Volkhov';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 18px;
-color: rgba(127, 133, 137, 0.6);
-
-/* Email */
-position: absolute;
-width: 43px;
-height: 19px;
-left: 38px;
-top: 398px;
-font-family: 'Volkhov';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 19px;
-color: #535353;
-
-/* icon-mail */
-position: absolute;
-width: 20px;
-height: 20px;
-left: 46px;
-top: 433px;
-
-/* password */
-position: absolute;
-width: 300px;
-height: 68px;
-left: 30px;
-top: 479px;
-
-/* Rectangle 41922 */
-box-sizing: border-box;
-position: absolute;
-width: 300px;
-height: 50px;
-left: 30px;
-top: 497px;
-background: #FFFFFF;
-opacity: 0.8;
-border: 1px solid #757575;
-border-radius: 8px;
-
-/* Password */
-position: absolute;
-width: 69px;
-height: 19px;
-left: 38px;
-top: 479px;
-font-family: 'Volkhov';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 19px;
-color: #535353;
-
-/* ************ */
-position: absolute;
-width: 80px;
-height: 18px;
-left: 70px;
-top: 514px;
-font-family: 'Volkhov';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 18px;
-color: rgba(127, 133, 137, 0.6);
-
-/* lock */
-position: absolute;
-width: 20px;
-height: 20px;
-left: 46px;
-top: 509px;
-
-/* seat num */
-position: absolute;
-width: 300px;
-height: 68px;
-left: 30px;
-top: 317px;
-
-/* Rectangle 41920 */
-box-sizing: border-box;
-position: absolute;
-width: 300px;
-height: 50px;
-left: 30px;
-top: 335px;
-background: #FFFFFF;
-opacity: 0.8;
-border: 1px solid #757575;
-border-radius: 8px;
-
-/* Seat Number */
-position: absolute;
-width: 95px;
-height: 19px;
-left: 38px;
-top: 317px;
-font-family: 'Volkhov';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 19px;
-color: #535353;
-
-/* ************ */
-position: absolute;
-width: 80px;
-height: 18px;
-left: 70px;
-top: 352px;
-font-family: 'Volkhov';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 18px;
-color: rgba(127, 133, 137, 0.6);
-
-/* Vector */
-position: absolute;
-left: 13.33%;
-right: 82.22%;
-top: 43.62%;
-bottom: 54.38%;
-background: #9E9E9E;
-
-/* full name */
-position: absolute;
-width: 300px;
-height: 68px;
-left: 30px;
-top: 236px;
-
-/* Rectangle 41919 */
-box-sizing: border-box;
-position: absolute;
-width: 300px;
-height: 50px;
-left: 30px;
-top: 254px;
-background: #FFFFFF;
-opacity: 0.8;
-border: 1px solid #757575;
-border-radius: 8px;
-
-/* Mohamed Ahmed */
-position: absolute;
-width: 122px;
-height: 18px;
-left: 70px;
-top: 271px;
-font-family: 'Volkhov';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 18px;
-color: rgba(127, 133, 137, 0.6);
-
-/* Full Name */
-position: absolute;
-width: 75px;
-height: 19px;
-left: 38px;
-top: 236px;
-font-family: 'Volkhov';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 19px;
-color: #535353;
-
-/* Group 1171274964 */
-position: absolute;
-width: 16.5px;
-height: 20.5px;
-left: 48px;
-top: 270px;
-
-/* Vector */
-position: absolute;
-left: 14.86%;
-right: 83.61%;
-top: 34.56%;
-bottom: 64.75%;
-background: #9E9E9E;
-
-/* nav bar */
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: flex-end;
-padding: 0px;
-gap: 220px;
-position: absolute;
-width: 360px;
-height: 24px;
-left: 0px;
-top: 7px;
-
-/* Time */
-width: 56px;
-height: 23px;
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-/* Time */
-position: absolute;
-height: 18px;
-left: 0.33px;
-right: 1.67px;
-top: calc(50% - 18px/2 + 3.5px);
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 600;
-font-size: 15px;
-line-height: 18px;
-text-align: center;
-letter-spacing: -0.333333px;
-color: #535353;
-
-/* UI */
-width: 68px;
-height: 16px;
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-
-/* Battery */
-position: absolute;
-width: 25px;
-height: 12px;
-right: 0px;
-top: 2px;
-
-/* Border */
-box-sizing: border-box;
-position: absolute;
-left: 0%;
-right: 12%;
-top: 2.78%;
-bottom: 2.78%;
-mix-blend-mode: normal;
-opacity: 0.35;
-border: 1px solid #535353;
-border-radius: 2.66667px;
-
-/* Cap */
-position: absolute;
-left: 92%;
-right: 2.67%;
-top: 33.33%;
-bottom: 33.33%;
-background: #535353;
-mix-blend-mode: normal;
-opacity: 0.4;
-
-/* Capacity */
-position: absolute;
-left: 8%;
-right: 20%;
-top: 19.44%;
-bottom: 19.44%;
-background: #535353;
-border-radius: 1.33333px;
-
-/* Wifi */
-position: absolute;
-left: 29.41%;
-right: 39.71%;
-top: 6.25%;
-bottom: 0%;
-
-/* Wifi */
-position: absolute;
-width: 15.33px;
-height: 11px;
-right: 3px;
-top: 1.33px;
-background: #535353;
-
-/* Wifi-path */
-position: absolute;
-left: 12.7%;
-right: 14.29%;
-top: 8.89%;
-bottom: 60%;
-background: #DADADA;
-
-/* Wifi-path */
-position: absolute;
-left: 25.4%;
-right: 26.98%;
-top: 33.33%;
-bottom: 42.22%;
-background: #DADADA;
-
-/* Wifi-path */
-position: absolute;
-left: 38.1%;
-right: 39.68%;
-top: 60%;
-bottom: 17.78%;
-background: #DADADA;
-
-/* Cell */
-position: absolute;
-width: 18px;
-height: 12px;
-right: 50px;
-top: 2px;
-
-/* Cell */
-position: absolute;
-width: 17px;
-height: 10.67px;
-right: 0.33px;
-top: 1px;
-background: #535353;
+          // شريط الحالة العلوي (وقت، شبكة، بطارية، إلخ)
+          Positioned(
+            top: 7,
+            left: 0,
+            right: 0,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    '9:41',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF535353),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.signal_cellular_4_bar, size: 18, color: Color(0xFF535353)),
+                      SizedBox(width: 5),
+                      Icon(Icons.wifi, size: 18, color: Color(0xFF535353)),
+                      SizedBox(width: 5),
+                      Icon(Icons.battery_full, size: 18, color: Color(0xFF535353)),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

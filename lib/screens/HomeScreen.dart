@@ -4,6 +4,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+        backgroundColor: Color(0xFF003B99),
+      ),
       body: Stack(
         children: [
           // الخلفية البيضاء
@@ -71,21 +75,27 @@ class HomeScreen extends StatelessWidget {
           Positioned(
             left: 80,
             top: 280,
-            child: Container(
-              width: 200,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Color(0xFFEBC069),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Text(
-                  'Get Started',
-                  style: TextStyle(
-                    fontFamily: 'Volkhov',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Colors.white,
+            child: GestureDetector(
+              onTap: () {
+                // يمكنك إضافة دالة للتنقل أو أي حدث آخر
+                print('Get Started tapped');
+              },
+              child: Container(
+                width: 200,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Color(0xFFEBC069),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: Text(
+                    'Get Started',
+                    style: TextStyle(
+                      fontFamily: 'Volkhov',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

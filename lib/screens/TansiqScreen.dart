@@ -1,155 +1,162 @@
-/* Tansiq */
-.tansiq-container {
-    position: relative;
-    width: 360px;
-    height: 800px;
-    background: #FCF8F0;
-}
+import 'package:flutter/material.dart';
 
-/* Tansiq Header */
-.tansiq-header {
-    position: absolute;
-    width: 58px;
-    height: 20px;
-    left: 151px;
-    top: 71px;
-    font-family: 'Volkhov';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
-    color: #003B99;
-}
+class TansiqScreen extends StatelessWidget {
+  const TansiqScreen({super.key});
 
-/* List of Available Universities */
-.universities-list {
-    position: absolute;
-    width: 226px;
-    height: 20px;
-    left: 24px;
-    top: 307px;
-    font-family: 'Volkhov';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    color: #003B99;
-}
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFFCF8F0),
+      body: Stack(
+        children: [
+          // Chevron (Back Button)
+          Positioned(
+            top: 74,
+            left: 16,
+            child: Icon(Icons.arrow_back_ios, size: 15, color: Color(0xFF003B99)),
+          ),
 
-/* Tansiq Data */
-.tansiq-data {
-    position: absolute;
-    width: 94px;
-    height: 20px;
-    left: 24px;
-    top: 110px;
-    font-family: 'Volkhov';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    color: #003B99;
-}
+          // Header Text
+          Positioned(
+            top: 71,
+            left: 151,
+            child: Text(
+              "Tansiq",
+              style: TextStyle(
+                fontFamily: 'Volkhov',
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: Color(0xFF003B99),
+              ),
+            ),
+          ),
 
-/* Chevron */
-.chevron {
-    position: absolute;
-    width: 8px;
-    height: 15px;
-    left: 16px;
-    top: 74px;
-    background: #003B99;
-}
+          // Tansiq Data
+          Positioned(
+            top: 110,
+            left: 24,
+            child: Text(
+              "Tansiq Data",
+              style: TextStyle(
+                fontFamily: 'Volkhov',
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: Color(0xFF003B99),
+              ),
+            ),
+          ),
 
-/* Nomination Paper */
-.nomination-paper-container {
-    position: absolute;
-    width: 205px;
-    height: 44px;
-    left: 78px;
-    top: 641px;
-}
+          // Available Universities Label
+          Positioned(
+            top: 307,
+            left: 24,
+            child: Text(
+              "List of Available Universities",
+              style: TextStyle(
+                fontFamily: 'Volkhov',
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: Color(0xFF003B99),
+              ),
+            ),
+          ),
 
-/* Rectangle 41926 */
-.nomination-paper {
-    position: absolute;
-    width: 205px;
-    height: 44px;
-    left: 78px;
-    top: 641px;
-    background: #EBC069;
-    border-radius: 10px;
-}
+          // University Block Example (One Block)
+          Positioned(
+            top: 331,
+            left: 16,
+            child: Container(
+              width: 328,
+              height: 88,
+              decoration: BoxDecoration(
+                color: Color(0xFFF8EDD8),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Stack(
+                children: [
+                  // University Image
+                  Positioned(
+                    right: 0,
+                    child: Container(
+                      width: 108,
+                      height: 88,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(12),
+                          bottomRight: Radius.circular(12),
+                        ),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/OIP.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
 
-/* Nomination Paper Text */
-.nomination-paper-text {
-    position: absolute;
-    width: 147px;
-    height: 21px;
-    font-family: 'Volkhov';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 21px;
-    color: #FFFFFF;
-    text-align: center;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
+                  // University Name
+                  Positioned(
+                    top: 20,
+                    left: 39,
+                    child: Text(
+                      "Cairo University",
+                      style: TextStyle(
+                        fontFamily: 'Volkhov',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFF003B99),
+                      ),
+                    ),
+                  ),
 
-/* University Blocks */
-.university-block {
-    position: absolute;
-    width: 328px;
-    height: 88px;
-    left: 16px;
-    background: #F8EDD8;
-    border-radius: 12px;
-}
+                  // Faculty Name
+                  Positioned(
+                    top: 44,
+                    left: 39,
+                    child: Text(
+                      "Faculty of Engineering",
+                      style: TextStyle(
+                        fontFamily: 'Volkhov',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFF9E9E9E),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
 
-/* University Image */
-.university-image {
-    position: absolute;
-    width: 108px;
-    height: 88px;
-    left: 236px;
-    top: 331px;
-    background: url(OIP.jpg);
-    border-radius: 0px 12px 12px 0px;
+          // Nomination Paper Button
+          Positioned(
+            top: 641,
+            left: 78,
+            child: GestureDetector(
+              onTap: () {
+                // Handle navigation
+              },
+              child: Container(
+                width: 205,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: Color(0xFFEBC069),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Nomination Paper",
+                  style: TextStyle(
+                    fontFamily: 'Volkhov',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
-
-/* University Name */
-.university-name {
-    position: absolute;
-    width: 114px;
-    height: 20px;
-    left: 39px;
-    top: 351px;
-    font-family: 'Volkhov';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 20px;
-    color: #003B99;
-    text-align: center;
-}
-
-/* Faculty Name */
-.faculty-name {
-    position: absolute;
-    width: 157px;
-    height: 20px;
-    left: 39px;
-    top: 375px;
-    font-family: 'Volkhov';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 20px;
-    color: #9E9E9E;
-    text-align: center;
-}
-
-/* Repeat for other universities (Ain Shams, Mansoura) with similar structure */

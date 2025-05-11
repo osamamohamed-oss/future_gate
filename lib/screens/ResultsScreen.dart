@@ -75,14 +75,15 @@ class ResultsScreen extends StatelessWidget {
           Positioned(
             left: 149,
             top: 71,
-            child: Text(
-              'Results',
-              style: TextStyle(
-                fontFamily: 'Volkhov',
-                fontWeight: FontWeight.w700,
-                fontSize: 16,
-                color: Color(0xFF003B99),
-                textAlign: TextAlign.center,
+            child: Center(
+              child: Text(
+                'Results',
+                style: TextStyle(
+                  fontFamily: 'Volkhov',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
+                  color: Color(0xFF003B99),
+                ),
               ),
             ),
           ),
